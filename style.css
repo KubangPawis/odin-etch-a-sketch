@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #9BE8BB;
+}
+
+#wrapper {
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#sketch-grid {
+    display: flex;
+    flex-direction: column;
+    max-width: 60%;
+}
+
+.grid-row {
+    display: flex;
+    flex: 1;
+}
+
+.grid-box {
+    background-color: honeydew;
+    border: 1px solid green;
+    flex: 1;
+    height: 40px;
+    width: 40px;
+}
