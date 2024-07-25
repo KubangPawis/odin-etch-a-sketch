@@ -65,8 +65,10 @@ function initializeButtonEvents() {
             switch (button.id) {
                 case "btn-generate-grid":
                     regenerateGrid();
+                    break;
                 case "btn-reset-grid":
                     resetGrid();
+                    break;
             }
         });
     });
