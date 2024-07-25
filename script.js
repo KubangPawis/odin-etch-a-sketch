@@ -1,15 +1,14 @@
-let numberOfRows = 16;
-let numberOfColumns = 16;
+let gridSize = 16;
 
-function init() {
+function createGrid() {
     const sketchGrid = document.querySelector("#sketch-grid");
     sketchGrid.addEventListener("mouseover", hoverPaintEffect);
 
-    for (let i = 0; i < numberOfRows; i++) {
+    for (let i = 0; i < gridSize; i++) {
         const gridRow = document.createElement("div");
         gridRow.classList.toggle("grid-row");
 
-        for (let j = 0; j < numberOfColumns; j++) {
+        for (let j = 0; j < gridSize; j++) {
             const gridBox = document.createElement("div");
             gridBox.classList.toggle("grid-box");
             gridRow.appendChild(gridBox);
@@ -29,5 +28,4 @@ function hoverPaintEffect(e) {
         clickedGridBox.style.opacity = currentBoxOpacity + 0.10;
     }
 }
-
-window.onload = init;
+window.onload = createGrid;
