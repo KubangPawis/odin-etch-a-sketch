@@ -34,12 +34,15 @@ function hoverPaintEffect(e) {
 
 function regenerateGrid() {
     gridSize = Number(prompt("Enter your desired sketch grid size:"));
+    console.log("New grid size: " + gridSize);
 
-    if (gridSize && gridSize > 0) {
+    if (gridSize && gridSize <= 40 && gridSize > 0) {
         const sketchGrid = document.querySelector("#sketch-grid");
         const wrapper = document.querySelector("#wrapper");
         wrapper.removeChild(sketchGrid);
         createGrid();
+    } else if (gridSize > 40) {
+        alert("Grid size CANNOT be set to a value greater than 40. Please try again!");
     } else {
         alert("Invalid input!");
     }
