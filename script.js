@@ -41,4 +41,24 @@ function regenerateGrid() {
     createGrid();
 }
 
-window.onload = createGrid;
+function initializeButtonEvents() {
+    const buttonList = document.querySelectorAll("button");
+    buttonList.forEach((button) => {
+        button.addEventListener("click", (e) => {
+            const button = e.target;
+            console.log(button);
+
+            switch (button.id) {
+                case "btn-generate-grid":
+                    regenerateGrid();
+            }
+        });
+    });
+}
+
+function init() {
+    createGrid();
+    initializeButtonEvents();
+}
+
+window.onload = init;
