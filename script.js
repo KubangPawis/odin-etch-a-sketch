@@ -4,6 +4,7 @@ function createGrid() {
     const sketchGrid = document.createElement("div");
     sketchGrid.id = "sketch-grid";
     sketchGrid.addEventListener("mouseover", hoverPaintEffect);
+    sketchGrid.addEventListener("click", hoverPaintEffect);
 
     for (let i = 0; i < gridSize; i++) {
         const gridRow = document.createElement("div");
