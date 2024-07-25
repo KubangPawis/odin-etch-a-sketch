@@ -16,8 +16,8 @@ function createGrid() {
         }
         sketchGrid.appendChild(gridRow);
     }
-    const wrapper = document.querySelector("#wrapper");
-    wrapper.prepend(sketchGrid);
+    const titleContainer = document.querySelector(".title-container");
+    titleContainer.insertAdjacentElement("afterend", sketchGrid);
 }
 
 function hoverPaintEffect(e) {
