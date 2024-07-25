@@ -33,7 +33,7 @@ function hoverPaintEffect(e) {
 }
 
 function regenerateGrid() {
-    gridSize = Number(prompt("Enter your desired sketch grid size:"));
+    gridSize = Math.floor(Number(prompt("Enter your desired sketch grid size:")));
     console.log("New grid size: " + gridSize);
 
     if (gridSize && gridSize <= 40 && gridSize > 0) {
