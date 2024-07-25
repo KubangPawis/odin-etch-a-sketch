@@ -34,15 +34,16 @@ function hoverPaintEffect(e) {
 }
 
 function regenerateGrid() {
-    gridSize = Math.floor(Number(prompt("Enter your desired sketch grid size:")));
-    console.log("New grid size: " + gridSize);
+    const inputGridSize = Math.floor(Number(prompt("Enter your desired sketch grid size:")));
+    console.log("New grid size: " + inputGridSize);
 
-    if (gridSize && gridSize <= 40 && gridSize > 0) {
+    if (inputGridSize && inputGridSize <= 40 && inputGridSize > 0) {
+        gridSize = inputGridSize;
         const sketchGrid = document.querySelector("#sketch-grid");
         const wrapper = document.querySelector("#wrapper");
         wrapper.removeChild(sketchGrid);
         createGrid();
-    } else if (gridSize > 40) {
+    } else if (inputGridSize > 40) {
         alert("Grid size CANNOT be set to a value greater than 40. Please try again!");
     } else {
         alert("Invalid input!");
