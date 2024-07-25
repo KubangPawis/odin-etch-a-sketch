@@ -1,7 +1,8 @@
 let gridSize = 16;
 
 function createGrid() {
-    const sketchGrid = document.querySelector("#sketch-grid");
+    const sketchGrid = document.createElement("div");
+    sketchGrid.id = "sketch-grid";
     sketchGrid.addEventListener("mouseover", hoverPaintEffect);
 
     for (let i = 0; i < gridSize; i++) {
@@ -15,6 +16,8 @@ function createGrid() {
         }
         sketchGrid.appendChild(gridRow);
     }
+    const wrapper = document.querySelector("#wrapper");
+    wrapper.prepend(sketchGrid);
 }
 
 function hoverPaintEffect(e) {
@@ -28,4 +31,14 @@ function hoverPaintEffect(e) {
         clickedGridBox.style.opacity = currentBoxOpacity + 0.10;
     }
 }
+
+function regenerateGrid() {
+    gridSize = prompt("Enter your desired sketch grid size:");
+
+    const sketchGrid = document.querySelector("#sketch-grid");
+    const wrapper = document.querySelector("#wrapper");
+    wrapper.removeChild(sketchGrid);
+    createGrid();
+}
+
 window.onload = createGrid;
