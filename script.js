@@ -48,6 +48,13 @@ function regenerateGrid() {
     }
 }
 
+function resetGrid() {
+    const sketchGrid = document.querySelector("#sketch-grid");
+    const wrapper = document.querySelector("#wrapper");
+    wrapper.removeChild(sketchGrid);
+    createGrid();
+}
+
 function initializeButtonEvents() {
     const buttonList = document.querySelectorAll("button");
     buttonList.forEach((button) => {
@@ -58,6 +65,8 @@ function initializeButtonEvents() {
             switch (button.id) {
                 case "btn-generate-grid":
                     regenerateGrid();
+                case "btn-reset-grid":
+                    resetGrid();
             }
         });
     });
