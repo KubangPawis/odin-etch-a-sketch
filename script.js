@@ -33,12 +33,17 @@ function hoverPaintEffect(e) {
 }
 
 function regenerateGrid() {
-    gridSize = prompt("Enter your desired sketch grid size:");
+    gridSize = Number(prompt("Enter your desired sketch grid size:"));
 
-    const sketchGrid = document.querySelector("#sketch-grid");
-    const wrapper = document.querySelector("#wrapper");
-    wrapper.removeChild(sketchGrid);
-    createGrid();
+    if (gridSize) {
+        const sketchGrid = document.querySelector("#sketch-grid");
+        const wrapper = document.querySelector("#wrapper");
+        wrapper.removeChild(sketchGrid);
+        createGrid();
+    } else if (isNaN(gridSize)) {
+        alert("Invalid input!");
+    } else {
+    }
 }
 
 function initializeButtonEvents() {
