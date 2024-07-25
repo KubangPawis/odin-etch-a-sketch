@@ -33,3 +33,8 @@ body {
     height: 40px;
     width: 40px;
 }
+
+.hovered-grid-box {
+    background-color: #02A847;
+    opacity: 0.50;
+}

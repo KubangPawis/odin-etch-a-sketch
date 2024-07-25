@@ -20,7 +20,14 @@ function init() {
 
 function hoverPaintEffect(e) {
     const clickedGridBox = e.target;
-    clickedGridBox.style.backgroundColor = "#62A862";
+    let currentBoxOpacity = Number(window.getComputedStyle(clickedGridBox).opacity);
+    console.log("Box Opacity: " + currentBoxOpacity);
+
+    if (!clickedGridBox.classList.contains("hovered-grid-box")) {
+        clickedGridBox.classList.toggle("hovered-grid-box");
+    } else {
+        clickedGridBox.style.opacity = currentBoxOpacity + 0.10;
+    }
 }
 
 window.onload = init;
