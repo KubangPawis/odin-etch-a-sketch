@@ -20,7 +20,8 @@ body {
 #sketch-grid {
     display: flex;
     flex-direction: column;
-    max-width: 60%;
+    width: 720px;
+    height: 720px;
 }
 
 .grid-row {
@@ -32,8 +33,6 @@ body {
     background-color: honeydew;
     border: 1px solid green;
     flex: 1;
-    height: 40px;
-    width: 40px;
 }
 
 .hovered-grid-box {
